@@ -17,7 +17,7 @@
 	<meta itemprop="image" content="images/social.jpg">
 	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<link rel="image_src" href="images/social.jpg" / >
-	
+
 	<link rel="stylesheet" type="text/css" href="doc/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="doc/css/prettify.css" />
 	<link rel="stylesheet" type="text/css" href="doc/css/style.css" />
@@ -26,14 +26,14 @@
 	<link rel="stylesheet" type="text/css" href="css/themes/tooltipster-noir.css" />
 	<link rel="stylesheet" type="text/css" href="css/themes/tooltipster-punk.css" />
 	<link rel="stylesheet" type="text/css" href="css/themes/tooltipster-shadow.css" />
-	
+
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 	<script type="text/javascript" src="doc/js/jquery.jgfeed.js"></script>
 	<script type="text/javascript" src="doc/js/prettify.js"></script>
 	<script type="text/javascript" src="doc/js/lang-css.js"></script>
 	<script type="text/javascript" src="doc/js/scripts.js"></script>
-	<script type="text/javascript" src="js/jquery.tooltipster.js"></script>
-	
+	<script type="text/javascript" src="dist/jquery.tooltipster.js"></script>
+
 	<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -100,7 +100,7 @@
 				<a href="https://github.com/iamceege/tooltipster/archive/master.zip" class="button alt">Download</a> <span style="padding-right: 0.5em;">&amp;</span> <a href="#demos" class="white">get started &rsaquo;</a>
 			</div>
 		</section>
-		
+
 		<section id="demos">
 			<h2>Demos</h2>
 			<ul>
@@ -134,7 +134,7 @@
 				<li>...&amp; more!</li>
 			</ul>
 		</section>
-		
+
 		<section id="getting-started">
 			<h2>Getting Started</h2>
 			<h3>1. Load jQuery and include Tooltipster's plugin files</h3>
@@ -164,7 +164,7 @@
 &lt;div class="tooltip" title="This is my div's tooltip message!"&#62; 
     This div has a tooltip when you hover over it!
 &lt;/div&#62;</pre>
-			
+
 			<h3>3. Activate Tooltipster</h3>
 			<p>The last thing we have to do is activate the plugin. To do this, add the following script right before your closing &lt;/head&#62; tag (using whatever selector you'd like - in this case we're using the <strong>.tooltip</strong> class):</p>
 			<pre class="prettyprint">
@@ -178,7 +178,7 @@
         });
     &lt;/script&#62;
 &lt;/head&#62;</pre>
-			
+
 			<h3><a name="further">4. Taking It a Step Further</a></h3>
 			<h4>Using HTML tags inside your tooltips</h4>
 			<p>Tooltipster allows you to use any HTML markup you can think of inside your tooltips. This means you can insert things like images and text formatting tags. To achieve this, the recommended method is a little different : provide your content as a jQuery object in the script rather than in the title attribute :</p>
@@ -225,7 +225,7 @@
     &lt;/div&#62;
 	
 &lt;/body&#62;</pre>
-			
+
 			<h4>Customizing Your Tooltipster's Style</h4>
 			<p>The style of your Tooltipsters can be easily changed by editing/overriding the default Tooltipster theme, located in the <strong>css/tooltipster.css</strong> file.</p>
 			<p>Tooltipster is also packaged with 4 alternative themes to choose from. They are demonstrated at the bottom of this page. To use a theme, just include its css file (located in the css/themes folder) in your page and specify its name in Tooltipster's settings :</p>
@@ -250,7 +250,7 @@ $('.tooltip').tooltipster({
 	line-height: 16px;
 	padding: 8px 10px;
 }</pre>
-			
+
 			<h4>Customizing Tooltipster's Functionality</h4>
 			<p>Tooltipster's options gives you a wide range of variables to tweak your tooltip to your heart's content. To learn more about all of the options, <a href="#options">read the Options section</a>. Here's just a few of the things you can play with:</p>
 			<pre class="prettyprint">
@@ -262,7 +262,7 @@ $('.tooltip').tooltipster({
    trigger: 'hover'
 });</pre>
 		</section>
-		
+
 		<section id="options">
 			<h2>Options</h2>
 			<table border="0" cellpadding="0" cellspacing="0">
@@ -433,10 +433,10 @@ $('.tooltip').tooltipster({
 				</tr>
 			</table>
 		</section>
-		
+
 		<section id="advanced">
 			<h2>Advanced</h2>
-			
+
 			<a name="api"></a>
 			<h3>The awesomesauce Tooltipster API</h3>
 			<p>The Tooltipster API was created to be as flexible and easy to use as possible (thanks to <a href="https://github.com/glebtv">glebtv</a> for the inspiration). The API allows you to create custom triggers, update tooltip content on the fly (whether the tooltip is currently open or not), destroy Tooltipster functionality if needed, and reposition tooltips for unique use cases.</p>
@@ -476,7 +476,7 @@ $(...).tooltipster('elementTooltip');
 
 // return the HTML root element of the icon if there is one, 'undefined' otherwise
 $(...).tooltipster('elementIcon');</pre>
-			
+
 			<a name="ajax"></a>
 			<h3>Using AJAX to generate your tooltip content</h3>
 			<p>Tooltipster gives you the ability to fire a custom synchronous or asynchronous function everytime before the tooltip launches (<a href="#functionBeforeExample">functionBefore</a>) or just once upon instantiation (<a href="#functionInitExample">functionInit</a>). One great use for this is to grab dynamic content for your tooltips via AJAX.</p>
@@ -526,7 +526,7 @@ $('.tooltip').tooltipster({
         }
     }
 });</pre>
-			
+
 			<a name="apishow"></a>
 			<h3>Manually show and hide a tooltip</h3>
 			<p>By default and according to the 'trigger' option, Tooltipster automatically shows tooltips upon users' mouse clicks or mouse hovering (or their touch-gesture equivalents). In addition to this, you may also manually open or close a tooltip at anytime with a simple javascript command.</p>
@@ -567,14 +567,14 @@ $(document).ready(function() {
    });
 });
 </pre>
-			
+
 			<a name="apicontent"></a>
 			<h3>Updating a tooltip's content</h3>
 			<p>It's easy as pie to update a tooltip's content - whether it's open or closed. Depending on your selector, you can update multiple tooltips at once or just one:</p>
 			<pre class="prettyprint">
 $('#my-special-element').tooltipster('content', 'My new content');</pre>
 			<p>By default, Tooltipster will play a subtle animation when the content changes. To tweak the animation, check out the '.tooltipster-content-changing' class in your tooltipster.css file. It's important to note that only CSS transforms will be animated. To disable this animation, set updateAnimation to false.</p>
-			
+
 			<a name="multiple"></a>
 			<h3>Using several tooltips on a single element</h3>
 			<p>Several independant tooltips can be set on a single element, each one having its own triggers and options. Just set the 'multiple' option to true when you initialize your tooltip. This will only change two things that you might want to be aware of.</p>
@@ -621,12 +621,12 @@ var tooltip1 = tooltipsterObjects[0];
 tooltip1.content('New content for my first tooltip').show();</pre>
 
 <p>Note : if you have multiple tooltips and destroy them, only the last destroyed tooltip will transfer its content back to the title attribute of the tooltipped element.</p>
-	
+
 			<h3>Community submitted use cases</h3>
 			<p><a href="http://stackoverflow.com/questions/14741688/how-to-display-messages-from-jquery-validate-plugin-inside-of-tooltipster-toolti">Using Tooltipster alongside jQuery Validate</a> by <a href="https://github.com/sparky672">sparky672</a></p>
 			<p>Did you do something awesome with Tooltipster? <a href="#talk">Tell me</a> and I'll post it up here!</p>
 		</section>
-		
+
 		<section id="themes">
 			<h2>Themes</h2>
 			<p>Tired of the same old? Four other rocking themes are available for your tooltips, and you can always create yours ! Share them with us on GitHub !</p>
@@ -638,19 +638,19 @@ tooltip1.content('New content for my first tooltip').show();</pre>
 				<span class="tooltipster-shadow-preview" title="Check out my shadow" target="_blank">Shadow</span>
 			</div>
 		</section>
-				
+
 		<section id="talk">
 			<h2>Talk</h2>
 			<h3>Share thoughts, questions, &amp; bugs!</h3>
 			<p>Head on over to Tooltipster's issue tracker on GitHub: <a href="https://github.com/iamceege/tooltipster/issues">https://github.com/iamceege/tooltipster/issues</a></p>
 			<p>Before opening a new issue, please be sure to search through the backlog to see if your question or bug has been / is being resolved. Thank you! :)</p>
 		</section>
-		
+
 		<footer>
 			Developed and maintained by <a href="https://plus.google.com/116532683962309427991?rel=author" class="white">Caleb Jacob</a> and <a href="https://github.com/louisameline" class="white">Louis Ameline</a> under the <a href="http://opensource.org/licenses/MIT" class="white">MIT license</a>
 		</footer>
 	</div>
-	
+
 	<div id="fb-root"></div>
 	<script type="text/javascript">
 	  (function() {
