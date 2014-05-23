@@ -7,6 +7,7 @@
 ;(function ($, window, document) {
 
     var pluginName = "tooltipster",
+        disableAll = false,
         defaults = {
             animation: 'fade',
             arrow: true,
@@ -156,6 +157,9 @@
                 // - mouseenter, mouseleave and clicks happen even on pure touch devices because they are emulated. deviceIsPureTouch() is a simple attempt to detect them.
                 // - on hybrid devices, we do not prevent touch gesture from opening tooltips. It would be too complex to differentiate real mouse events from emulated ones.
                 // - we check deviceIsPureTouch() at each event rather than prior to binding because the situation may change during browsing
+                $(document).on('hideAllTooltipsters', function(){
+                    self.hide();
+                });
                 if (self.options.trigger == 'hover') {
 
                     // these binding are for mouse interaction only
@@ -195,7 +199,6 @@
 
         // this function will schedule the opening of the tooltip after the delay, if there is one
         _show: function () {
-
             var self = this;
 
             if (self.Status != 'shown' && self.Status != 'appearing') {
@@ -215,14 +218,13 @@
 
         // this function will open the tooltip right away
         _showNow: function (callback) {
-
             var self = this;
 
             // call our constructor custom function before continuing
             self.options.functionBefore.call(self.$el, self.$el, function () {
 
                 // continue only if the tooltip is enabled and has any content
-                if (self.enabled && self.Content !== null) {
+                if (!disableAll && self.enabled && self.Content !== null) {
 
                     // save the method callback and cancel hide method callbacks
                     if (callback) self.callbacks.show.push(callback);
@@ -1142,7 +1144,13 @@
                         // change default options for all future instances
                         $.extend(defaults, args[1]);
                         break;
-
+                    case 'disableAll':
+                        disableAll = true;
+                        break;
+                    case 'enableAll':
+                        $(document).trigger('hideAllTooltipsters');
+                        disableAll = false;
+                        break;
                     default:
                         methodIsStatic = false;
                         break;
@@ -1224,6 +1232,7 @@
                     }
 
                     if (go) {
+                        console.log(this);
                         instance = new Plugin(this, args[0]);
 
                         // save the reference of the new instance
