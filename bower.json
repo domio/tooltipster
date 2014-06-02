@@ -5,5 +5,11 @@
   "dependencies": {
     "jquery": ">=1.7"
   },
-  "ignore": ["./build", "./sass", "./source", "./index.html", "./Gruntfile.js"]
+  "ignore": [
+    "build",
+    "sass",
+    "source",
+    "index.html",
+    "Gruntfile.js"
+  ]
 }
