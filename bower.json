@@ -10,6 +10,10 @@
     "sass",
     "source",
     "index.html",
-    "Gruntfile.js"
+    "Gruntfile.js",
+    "package.json",
+    "demo",
+    "doc",
+    "README.md"
   ]
 }
